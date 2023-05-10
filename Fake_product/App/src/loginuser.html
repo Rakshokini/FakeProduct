@@ -1,0 +1,240 @@
+<link href="C:\Users\Thomas AJ\Desktop\node_try\style1.css" rel="stylesheet" type="text/css">
+
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="style1.css" rel="stylesheet" type="text/css">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+     <!-- meta tags for project-->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>Retailer Login</title>
+</head>
+<script>
+    function buyTab() {              
+        var sell_view = document.getElementById("sell_tab");
+        var buy_view = document.getElementById("buy_tab");
+        var acc_view = document.getElementById("acc_tab");
+        buy_view.style.display = "block";
+        sell_view.style.display = "none";
+        acc_view.style.display = "none";
+    }
+    function sellTab() {              
+        var sell_view = document.getElementById("sell_tab");
+        var buy_view = document.getElementById("buy_tab");
+        var acc_view = document.getElementById("acc_tab");
+        buy_view.style.display = "none";
+        sell_view.style.display = "block";
+        acc_view.style.display = "none";
+    }
+    function accTab() {              
+        var sell_view = document.getElementById("sell_tab");
+        var buy_view = document.getElementById("buy_tab");
+        var acc_view = document.getElementById("acc_tab");
+        buy_view.style.display = "none";
+        sell_view.style.display = "none";
+        acc_view.style.display = "block";
+    }
+    function home_button() {              
+        window.location.href = "http://localhost:3000/";
+    }
+</script>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light navbar-laravel" style="margin-top: 10em">
+    <div class="container">
+    <!-- <a class="navbar-brand" href="http://localhost:3000/"  style="color: black">Home>></a> -->
+    <button type="submit" id="home_button" class="btn btn-secondary" onclick='home_button()' style="margin-bottom: 20px">
+        Home
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+</nav>
+
+<main>
+    <div  class="cotainer">
+        <div id="login_page">
+        <div style="text-align: center; display: none;" id="login_success">
+            <div style="margin-left: 15px;margin-top: 10px; color: green">
+              <label> Successfully Login !!!!</label>
+            </div>
+          </div>
+        <div  style="text-align: center; display: none;" id="login_failure">
+        <div style="margin-left: 15px;margin-top: 10px; color: red">
+            <label> Login Failed !!!!</label>
+        </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div style="background-color: #aaacac;color: black; font-size: 20"  class="card-header">Retailer Login</div>
+                        <div class="card-body">
+                            <!-- <form name="myform" onsubmit="return validform()" action="http://localhost:3000/RegisterRetailer" method="POST" > -->
+                                <div class="form-group row">
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">User Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="user_name" class="form-control" name="user_name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="login_password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="login_password" class="form-control" name="login_password">
+                                    </div>
+                                </div>
+
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <!-- <button type="submit" id="register_retailer" class="btn btn-secondary" onclick="register_retailer(document.getElementById('ret_email').value, document.getElementById('ret_password').value,  document.getElementById('ret_confirm_pass').value)"> -->
+                                        <button type="submit" id="login_user" class="btn btn-secondary" >
+                                            Login
+                                        </button>
+                                    </div>
+                                </div>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div style="display: none;" id="dashboard_page">
+            <div class="row justify-content-center">
+                <div id="buy_sell_div" class="col-md-8">
+                    <div style="text-align: center; display: block; background-color: #dde7dd;border-color: #dde7dd; border-width: medium; border-style: outset; margin-bottom: 30px" id="dashboard_success">
+                        <div style="margin-left: 15px;margin-top: 10px;">
+                          <label> Dashboard Page</label>
+                        </div>
+                    </div>
+                   
+                      <div class="justify-content-between" >
+                        <div>
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                            <a class="nav-link" id="nav-buy-tab" role="tab" onclick='buyTab()' data-toggle="tab" aria-controls="nav-buy">
+                                <h4 class="text size">Buy</h4>
+                            </a>
+                            </li>
+                    
+                            <li>
+                            <a class="nav-link" id="nav-sell-tab" role="tab" onclick='sellTab()' data-toggle="tab" aria-controls="nav-sell">
+                                <h4 class="text size">Sell</h4>
+                            </a>
+                            </li>
+
+                            <li>
+                                <a class="nav-link" id="nav-acct-tab" role="tab" onclick='accTab()' data-toggle="tab" aria-controls="nav-acc">
+                                    <h4 class="text size">Account Balance</h4>
+                                </a>
+                                </li>
+                        </ul>
+                        </div>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade in show active" id="navBuy" role="tabpanel" aria-labelledby="nav-buy-tab">
+                                <!-- <p>Buy tab</p> -->
+                                <div id="buy_tab">
+                                    <div  style="text-align: center; display: none;" id="bought_failure">
+                                        <div style="margin-left: 15px;margin-top: 10px; color: red">
+                                            <label> Something went wrong !!!!</label>
+                                        </div>
+                                    </div>
+                                    <div  style="text-align: center; display: none;" id="bought_failure1">
+                                        <div style="margin-left: 15px;margin-top: 10px; color: red">
+                                            <label>Product purchase is not successful !!!!</label>
+                                        </div>
+                                    </div>
+                                    <div  style="text-align: center; display: none;" id="bought_failure2">
+                                        <div style="margin-left: 15px;margin-top: 10px; color: red">
+                                            <label> Insufficient balance !!!!</label>
+                                        </div>
+                                    </div>
+                                    <div  style="text-align: center; display: none;" id="bought_failure3">
+                                        <div style="margin-left: 15px;margin-top: 10px; color: red">
+                                            <label> This product is not owned by anyone !!!!</label>
+                                        </div>
+                                    </div>
+                                    <div  style="text-align: center; display: none;" id="bought_success">
+                                        <div style="margin-left: 15px;margin-top: 10px; color: green">
+                                            <label> Product code not found !!!!</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show active" id="navSell" role="tabpanel" aria-labelledby="nav-sell-tab">
+                                <div style="display: none; margin-top: 40px;"  id="sell_tab">
+                                    <div class="justify-content-center">
+                                        <div  style="text-align: center; display: none;" id="sell_product_failure">
+                                            <div style="margin-left: 15px;margin-top: 10px; color: red">
+                                                <label> Product code not found !!!!</label>
+                                            </div>
+                                        </div>
+                                        <div  style="text-align: center; display: none;" id="sell_product_success">
+                                            <div style="margin-left: 15px;margin-top: 10px; color: success">
+                                                <label> You have successfully sold the item !!!!</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                                <div class="card">
+                                                    <div style="background-color: #aaacac;color: black; font-size: 20"  class="card-header">Enter Product Details to be sold</div>
+                                                    <div class="card-body">
+                                                        <!-- <form name="myform" onsubmit="return validform()" action="http://localhost:3000/RegisterRetailer" method="POST" > -->
+                                                            <div class="form-group row">
+                                                                <label for="product_code" class="col-md-4 col-form-label text-md-right">Code Of Product</label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" id="product_code" class="form-control" name="product_code">
+                                                                </div>
+                                                            </div>
+                            
+                                                            <div class="form-group row">
+                                                                <label for="new_price" class="col-md-4 col-form-label text-md-right">New Price</label>
+                                                                <div class="col-md-6">
+                                                                    <input type="password" id="new_price" class="form-control" name="new_price">
+                                                                </div>
+                                                            </div>
+                            
+                            
+                                                                <div class="col-md-6 offset-md-4">
+                                                                    <!-- <button type="submit" id="register_retailer" class="btn btn-secondary" onclick="register_retailer(document.getElementById('ret_email').value, document.getElementById('ret_password').value,  document.getElementById('ret_confirm_pass').value)"> -->
+                                                                    <button type="submit" id="sell_product" class="btn btn-secondary" >
+                                                                        Submit
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        <!-- </form> -->
+                                                    </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in show active" id="navAcc" role="tabpanel" aria-labelledby="nav-acc-tab">
+                                <!-- <p>Buy tab</p> -->
+                                <div id="acc_tab"></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8" id="empty_div" style="text-align: center;display: block;background-color: #f6f5c9;border-style: ridge;margin-top: 70px;padding: 50px;" id="dashboard_warning">
+                        <div style="margin-left: 15px;margin-top: 10px; color: green">
+                          <label> No Data Available !!!</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/truffle-contract@4.0.31/dist/truffle-contract.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

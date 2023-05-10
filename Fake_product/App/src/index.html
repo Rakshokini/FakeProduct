@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <!-- <script src="./js/app.js"></script> -->
+    <script src="src/js/dist/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/e_commerce.png">
+
+<style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
+
+@media (min-width: 500px) {
+  .col-sm-6 {
+    width: 50%;
+  }
+}
+html, body {
+  height: 100%;
+  min-height: 18em;
+}
+
+
+.plane-style {
+    height: 50%;
+    min-height: 9em;
+    font-size: 2em;
+    /* color: white; */
+    font-family: 'Open Sans', sans-serif;
+    font-weight:300;
+;
+}
+@media(min-width: 500px) {
+  .plane-style {
+    padding-top: 2em;
+    height: 100%;
+  }
+}
+.plane-style > div {
+  position: relative;
+  top: 30%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+.plane-style > div .text-content {
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
+.plane-style > div .text-content .big {
+  font-size: 2em;
+}
+.plane-style > div img {
+  height: 3.3em;
+}
+.plane-style button, .plane-style a.button {
+  font-family: 'Open Sans', sans-serif;
+	font-weight:800;
+  /* background: none; */
+  border: 1px solid black;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 15em;
+  padding: 0.7em;
+  font-size: 0.5em;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+	cursor: pointer;
+}
+.plane-style a.button:hover {
+  text-decoration: none;
+  border-color: rgb(91, 88, 91);
+	cursor: pointer;
+    color: rgb(91, 88, 91);
+}
+
+.plane-style a.login_button {
+  font-family: 'Open Sans', sans-serif;
+	font-weight:800;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 5em;
+  padding: 0.7em;
+  font-size: 0.5em;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+    cursor: pointer;
+}
+
+.plane-style a.login_button:hover {
+  text-decoration: none;
+  border-color: rgb(91, 88, 91);
+	cursor: pointer;
+    color: rgb(91, 88, 91);
+}
+
+#plane-style-or {
+  font-size: 2em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media (max-width: 925px) {
+  #plane-style-or {
+    top:15%;
+  }
+}
+#plane-style-or > div img {
+  height: 2.5em;
+}
+@media (max-width: 500px) {
+  #plane-style-or {
+    position: absolute;
+    top: 50px;
+  }
+  #plane-style-or > div img {
+    height:2em;
+  }
+}
+@media(min-width: 500px) {
+  #plane-style-or {
+    font-size: 3em;
+  }
+}
+.big {
+  font-size: 2em;
+  font-weight:800;
+}
+
+.bold {
+	text-transform:uppercase;
+}
+</style>
+
+<script>
+ </script>       
+</head>
+<body>
+
+<div class='plane-style col-xs-12 col-sm-12'>
+    <a class='login_button' href="http://localhost:3000/loginUser">Login</a>
+
+        <div>
+          <div  style="text-align: center; display: none; margin-bottom:60px" id="owner_failure">
+            <div style="margin-left: 15px;margin-top: 10px; color: red">
+                <label style="font-size: 20px"> Only Owners are allowed to Create new products !!!!</label>
+            </br>
+                <label style="font-size: 12px"> Please contact manuhelp@gmail.com to create new products</label>
+            </div>
+          </div>
+          <img src='/e_commerce.png'>
+          <div class='text-content'>
+            <div class='big'>Registration Page</div>
+          </div>
+          <!-- <button type="submit" id="manu_creation" class="btn" >
+            MANUFACTURE REGISTER
+          </button> -->
+          <a class='button' id='manu_creation'>
+            MANUFACTURE REGISTER
+          </a>
+          <a class='button' href="http://localhost:3000/retailerCreation">
+            RETAILER REGISTER
+          </a>
+          <!-- <a class='button' href="http://localhost:3000/customerCreation">
+            CUSTOMER REGISTER
+          </a> -->
+        </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/truffle-contract@4.0.31/dist/truffle-contract.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script src="app.js"></script>
+</body>
